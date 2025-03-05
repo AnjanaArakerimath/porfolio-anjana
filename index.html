@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjana Arakerimath</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="style.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous"> -->
+    <style>
+      .navbar{
+        height: 7vw;
+        background-color: #10283d;
+      }
+      #home_li{
+        box-shadow: 3px 2px 3px 0px #bab2b2;
+      }
+      #home_link{
+        color: #d06819;
+        transform:scale(1.1) ; 
+      }
+      footer{
+        margin-top: 40%;
+      }
+      #index_content{
+        /* height: 20px; */
+        margin-top: 2vw;
+        padding-left: 0%;
+        padding-right: 0%;
+      }
+      #bg_image{
+        margin-top: 80px;
+        height: 20vw;
+        width: 20vw;
+        /* margin-left: 8vw; */
+        border-radius: 50%;
+        border: solid white 0.7vw;
+        box-shadow:none ;
+        position: relative;
+      }
+      .position{
+        display: flex;
+        text-shadow: 1px 1px 2px #fffdfd;
+        justify-content: center;
+        font-size: 1.5vw;
+        font-weight: 600;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color:black;
+      }
+      #intro_col{
+        /* background-color: #06182b; */
+        height: 30vw;
+        padding-top: 10%;
+        font-weight: 500;
+        color: rgb(2, 12, 22);
+        /* border-left: 2px solid rgb(53, 46, 53); */
+        border-radius: 5%;
+        display: inline-block;
+        width: 46%;
+        margin-left: 0;
+        animation: swap_left 0.5s forwards;
+      }
+      #img_col{
+        display: inline-block;
+        /* width: 44%; */
+        margin-top:0 ;
+        text-align: center;
+        align-items: center;
+        animation: swap_right 0.5s forwards;
+      }
+      /* #img_col, #intro_col{
+
+      } */
+      h3,h5,#p4,#p3{
+        color: #000a68;
+        font-weight: 600;
+      }
+      #p3, #p4{
+        font-family: gabriola;
+        font-size: 20px;
+      }
+       
+        @keyframes swap_left{
+          0%{
+            transform: translateX(-20%);
+          }
+          100%{
+            transform: translateX(30%);
+          }
+        }
+        @keyframes swap_right{
+          0%{
+            transform: translateX(100%);
+          }
+          100%{
+            transform: translateX(0%);
+          }
+        }
+        
+        @media only screen and (max-width:1200px) and (min-width:992px) {
+          footer{
+              margin-top: 47%;
+          }
+          #bg_image{
+            margin-top: 0;
+          }
+          #img_col{
+            padding-top: 0;
+          }
+          #intro_col{
+            padding-top: 6%;
+          }
+        }
+        @media only screen and (max-width:992px) {
+          #img_col{
+            padding-top: 0;
+          }
+          /* *{
+            font-size:120%;
+          } */
+          
+          footer{
+              margin-top: 90%;
+          }
+          .navbar-brand{
+          font-size: 25px;
+        }
+        }
+        
+        
+        /* medium screen(teblet) */
+        @media only screen and (max-width:768px) {
+          
+          #intro_col,#img_col{
+            display: block;
+            width: 100%;  
+            animation: none;
+          }
+          #intro_col{
+            /* background-color: #10283d; */
+            border:none;
+            border-top: 2px solid;
+            margin-left: 0;
+            margin-top: 30%;
+            
+          }
+          #bg_image{
+            margin-top: 10vw;
+            margin-left: 0;
+            height: 55vw;
+            width: 55vw;
+          }
+          .position{
+            font-size: 4vw;
+          }
+          #about_me{
+            text-align: center;
+          }
+          #p3{
+            margin-top: 20px;
+          }
+          footer{
+              margin-top: 180%;
+          }
+          
+        }
+        @media only screen and (max-width:600px) {
+          
+          #intro_col,#img_col{
+            animation: none;
+            display: block;
+            width: 100%;  
+          }
+          #intro_col{
+            border:none;
+            border-top: 2px solid;
+            margin-left: 0;
+            margin-top: 10%;
+            padding: 0 3% 0 3%;
+          }
+          
+          #bg_image{
+            margin-top: 10vw;
+            margin-left: 0;
+            height: 60vw;
+            width: 60vw;
+          }
+          .position{
+            /* margin-top: 20%; */
+            font-size: 5vw;
+            bottom: 0;
+          }
+          #p1{
+            margin-top: 10%;
+          }
+          #p4,#p3{
+            font-size: 15px;
+          }
+          
+          footer{
+              margin-top: 200%;
+          }
+        }
+        @media (max-width: 448px) {
+          footer{
+              margin-top: 300%;
+          }
+          #p4,#p3{
+            font-size: 12px;
+          }
+        }
+
+    </style>
+</head>
+<body id="index_body">
+  <div id="navbar"></div>
+
+
+    <div class="container" id="index_content" style="height: 50px;">
+      <!-- <div class="row"> -->
+        <div  id="img_col">
+          <img src="image\index_pic.jpg" class="img-fluid" id="bg_image">
+          <div id="position_div">
+            <p class="position"  id="p1">
+              Associate Professor, MCA
+            </p>
+            <p class="position"  id="p2">
+              Pimpri Chinchwad College of Engineering, Pune
+            </p>
+          </div>
+        </div>
+        <div  id="intro_col" >
+          <h2 style="text-decoration: underline" id="about_me">ABOUT ME</h2><br>
+          <h3 class="heading1">ANJANA R ARAKERIMATH</h3>
+          <h5 class="heading3">Associate Professor, Pimpri Chinchwad College of Engineering</h5>
+        <div >
+  
+          <div class="effect varrius">
+            <div class="buttons">
+              <!-- <a href="https://www.facebook.com/anjana.arakerimath" class="fb" title="Join us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a> -->
+              
+              <a href="https://www.instagram.com/arakerimathanjana?igsh=MXA4d2plMG4xY3Y5cw==" class="insta" title="Join us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+              <a href="https://www.linkedin.com/in/anjana-arakerimath-47a606147/" class="in" title="Join us on Linked In"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+              <a href="https://scholar.google.co.in/citations?user=Sgd9lfcAAAAJ&hl=en" class="g-plus" title=" google scholor">      
+                <img src="image/google_scholor_logo.png" width="30px" height="30px">
+              </a>
+              <a href="mailto: a.anjana@pccoepune.org"   class="fb" title="G-MAIL">
+                <i class="fa fa-envelope-open-text"></i>
+              </a>
+              <a href="resume/Anjana Resume 250624 updated.docx" download="Anjana Arakerimath Resume"  title="download resume">
+                <i class="fa fa-download"></i>
+
+              </a>
+            </div>
+          
+          
+          </div>
+        </div>
+            <p id="p3" class="heading4">"Talent wins games, but teamwork and intelligence win championships.”</p>
+            <p style="margin-top: 3vw;" id="p4" class="heading4">
+              I'm a dedicated Teacher who values teamwork and takes initiative
+              in training team members, developing strategies, and monitoring
+              progress towards achieving our goals.            
+            </p>
+              
+          </div>
+          
+    </div>
+
+
+    <footer class="py-5 text-center">
+      <div class="copyright">&copy;Anjana Arakerimath. All Of The Rights Reserved</div>
+  </footer>
+  <script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+        });
+        
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
