@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anjana Arakerimath</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="style.css" rel="stylesheet">
+    <style>
+
+      #Rangoli_li{
+        box-shadow: 3px 2px 3px 0px #bab2b2;
+      }
+      #Rangoli_link{
+        color: #d06819;
+        transform:scale(1.1) ; 
+      }
+      .heading{
+        margin-top: 20px;
+        text-align: center;
+      }
+      #c3{
+        height: 700px;
+      }
+      #c1, #c2{
+        height: 100%;
+        box-shadow: 4px 8px 20px 0px rgb(159 159 159);
+      }
+      .img_container{
+          /* width: 100%; */
+          height: 100%;
+          position: absolute;
+          opacity: 0;
+          transition: opacity 1s ease-in-out;
+          border-bottom: 1px 1px red;
+      }
+       .active {
+          opacity: 1;
+      }
+      .cont1{
+        height: 70%;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+      .cont2{
+        background-color: #e1d6d6;
+        height: 30%;
+      }
+      .carousel {
+          position: relative;
+          width: 40%;
+          height: 400px;
+          overflow: hidden;
+          margin: 50px;
+      }
+      #Author{
+        text-align: right;
+        padding: 2%;
+
+      }
+      #c3
+      {
+        display: flex;
+      }
+      
+      #underline_div{
+          
+          background-color: #51536f; 
+          margin-left: 45%;
+        }
+        #comment{
+            font-weight: 600;
+            padding: 2px;
+        }
+      footer{
+        margin-top: 100px;
+      }
+      #fam{
+        font-size: 15px;
+      }
+
+      @media (max-width: 992px) {
+        #c3 {
+              width: 110%;
+          }
+      }
+      @media (max-width: 768px) {
+          #c3 {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 20px;
+              height: 1200px;
+              width: 80%;
+              margin-left: 7%;
+          }
+          .carousel{
+            height: 350px;
+            width: 100%;
+          }
+          footer{
+            margin-top: 275px;
+          }
+          
+      }
+      @media (max-width: 568px) {
+        #c3 {
+              height: 1200px;
+              width: 80%;
+              margin-left: 2%;
+          }
+        #comment{
+            font-size: 13px;
+        }
+        #Author{
+            font-size: 11px;
+        }
+       
+      }
+      @media (max-width: 368px){
+       
+        #underline_div{
+          margin-left: 20%;
+        }
+        #c3{
+          
+          margin-left: 1%;
+          width: 98%;
+          height: 1150px;
+        }
+        #c2,#c1{
+          /* height: 100%; */
+          width: 100%;
+          margin-left: 0;
+        }
+        #fam #comment{
+            font-size: 10px;
+        }
+        footer{
+          margin-top: 50%;
+        }
+        
+      }
+       
+    </style>
+</head>
+<body id="gallery_body">
+    <div id="navbar"></div>
+    <h1 class="heading">My Creativity</h1>
+
+    <div id="underline_div"></div>
+
+    <div class="container" id="c3">
+
+        <div class="carousel" id="c2">
+            <div class="img_container" class="active">
+                <div class="cont1">
+                    <img src="image/rimage7.jpeg"  alt=" 1" >
+                </div>
+                <div class="cont2">
+                    <p id="comment">"आशा वेगवेगळ्या, व सुंदर डिझाईनच्या रांगोळ्या पाहून मन एकदम प्रसन्न होते.नाशाही, ना पेन, फक्त रांगोळीचा वापर करून काढलेल्या डिझाईन मधून अंतरात्म्यापर्यंत शुभेच्छा पोहोचतात. ही एक दैवी देणगी आहे. ही कला खूपच छान आहे. अशा सुंदर रांगोळ्या आम्हाला नेहमी बघायला मिळो पांडुरंगा चरणी प्रार्थना"</p>
+                    <p id="Author">Smita Deshmukh</p>
+                </div>
+            </div>
+            <div class="img_container">
+                <div class="cont1">
+                    <img src="image/rimage2.jpeg" alt=" 2" >
+                </div>
+                <div class="cont2">
+                    <p id="comment">"Your Rangoli designs are beautiful unique with Indian heritage and  cultural touch"</p>
+                    <p id="Author">-Anuradha Phadnis , Pune</p>
+                </div>
+            </div>
+            <div class="img_container">
+                <div class="cont1">
+                    <img src="image/rimage3.jpeg" alt=" 3" >
+                </div>
+                <div class="cont2">
+                    <p id="comment">"अंजना तुझ्या रांगोळ्या खरोखर अप्रतिम असतात . त्या पाहून आम्हाला रांगोळी काढता न येणाऱ्या पण प्रेरणा मिळते आणि मी आणि माझ्या दोन्ही मुली तुझ्या रांगोळ्या घरी काढायचा प्रयत्न करतो ..बऱ्याच वेळा तुझ्या रांगोळ्या मधून संदेश असतात , शुभेच्छा असतात खरोखर खूप च छान आणि प्रसन्न वाटते ते पाहून -"</p>
+                    <p id="Author">-नंदिनी कुलकर्णी ,अजमेरा मोरवाडी पिंपरी</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel" id="c1">
+            <div class="img_container" class="active">
+                <div class="cont1">
+                    <img src="image/rimage4.jpeg" alt=" 4" >
+                </div>
+                <div class="cont2">
+                    <p id="comment">"Anjana your rangoli's are very Creative and unique. Made using minimal colours but still very attractive.They remind me of the free hand designs that we used to make during school time which gives happiness."</p>
+                    <p id="Author">-Anita Badger</p>
+                </div>
+            </div>
+            <div class="img_container">
+                <div class="cont1">
+                    <img src="image/rimage5.jpeg" alt=" 5" >
+                </div>
+                <div class="cont2">
+                    <p id="comment">"वेगवेगळ्या डिझाईन बघून दिवसाची सर्वात खूप छान होते प्रत्येक प्रसंगणुसर रांगोळी काढून तुझ्या हातून अशीच दिवसाची सर्वात व्हावी"</p>
+                    <p id="Author">-ज्योती थोरात सोमवंशी छ.संभाजीनगर</p>
+                </div>
+            </div>
+            <div class="img_container">
+                <div class="cont1">
+                    <img src="image/rimage6.jpeg" alt=" 6" >
+                </div>
+                <div class="cont2" id="fam">
+                    <p id="comment">"Hii Anjana aunty.... It's Nidhi from ua family bunch... 
+                        Nd am here to share my words regards to ua astonishing rangoli designs... 
+                        They are too arabesque🥀adorable💫and artistic🪸 they evoke some emotions sometimes 
+                        lyk devotional refreshing🌤️ nd all....the combinations of light colours u took out there are pleasent😍 to eyes.... 
+                        Thank you for sharing ur work with busy schedule also"</p>
+                    <p id="Author">-Family Grp</p>
+                </div>
+            </div>
+            <div class="img_container">
+                <div class="cont1">
+                    <img src="image/rimage8.jpeg" alt=" 7" >
+                </div>
+                <div class="cont2">
+                    <p id="comment">"रोजच्या धावपळी मधून देखिल वेळ काढ़ून तुम्ही छान छान रांगोळया काढ़ता आणि आपली आवड़, कला जोपासता, 
+                        ते पाहून खरच खुप छान वाटते."</p>
+                    <p id="Author">-स्नेहा जोशी, किसनकृपा मोरवाड़ी पिंपरी</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="py-5 text-center">
+        <div class="copyright">&copy;Anjana Arakerimath. All Of The Rights Reserved</div>
+    </footer>
+    <script>
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+        });
+
+
+        const images = document.querySelectorAll('#c2 .img_container');
+        let currentIndex = 0;
+        function changeImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+
+        const images1 = document.querySelectorAll('#c1 .img_container');
+        let currentIndex1 = 0;
+        function changeImage1() {
+            images1[currentIndex1].classList.remove('active');
+            currentIndex1 = (currentIndex1 + 1) % images1.length;
+            images1[currentIndex1].classList.add('active');
+        }
+
+        setInterval(changeImage, 3500);
+        setInterval(changeImage1, 3500);
+
+    </script>
+    
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anjana Arakerimath</title>
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      
+      /* .navbar{
+        background-image: url(image/DSC_0122.JPG);
+        background-repeat: no-repeat;
+        background-size: cover;        
+      } */
+      #profile_li{
+           box-shadow: 3px 2px 3px 0px #bab2b2;
+           color: rgb(182, 182, 238);
+        }
+      #profile_link{
+          color: #d06819;
+          transform:scale(1.1) ; 
+      }
+      .container {
+          width: 90%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      h1 {
+          margin-top: 20px;
+          text-align: center;
+          color: #ffffff;
+          margin-bottom: 20px;
+      }
+      .card {
+          font-weight: 700;
+          color: black;  
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          background: #fff;
+          width: 100%;
+          padding: 20px;
+          margin-left: 1%;
+          /* margin:0 0 100px 20px; */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      h2 {
+          color: #2f06e3;
+            /* border-bottom: 2px solid #ddd; */
+          padding-bottom: 5px;
+          margin-bottom: 10px;
+      }
+      
+      .heading{
+        color: blue;
+        text-shadow: 1px 1px 2px black;
+      }
+
+      ul {
+          list-style-type: disc;
+          margin-left: 20px;
+          color: #555;
+      }
+
+      li {
+          margin-bottom: 10px;
+      }
+      #about{
+        font-family: gabriola;   
+        font-size: 22px;     
+        font-weight: 600;
+        margin-top: 40px;
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+      #dp{
+        width: fit-content;
+        padding-right:0 ;
+      }
+      #dp1{
+        margin: 0;
+        padding: 0;
+      }
+      #first_line{
+        padding-bottom: 0;
+        border-bottom: 2px solid;
+      }
+      #name1 h3{
+        font-family:'Times New Roman', Times, serif; 
+        margin: 0; 
+        margin-top: 65px; 
+        text-shadow: 1px 1px 2px black; 
+        color: #0011dc;
+      }
+      .card_ul{
+        color: black;
+        /* text-shadow: 1px 1px 1px black; */
+      }
+      .icon{
+        width:60px;
+        height:70px;
+      }
+      
+      @media (min-width: 1024px) {
+          .container {
+              grid-template-columns: 1fr ;
+          }
+      }
+      @media (min-width: 768px) {
+          .container {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 20px;
+          }
+          
+      }
+      @media (max-width: 992px) {
+        .heading, .heading1{
+            margin-left: 7%;
+          }
+          
+      }
+      @media (max-width: 768px) {
+        #name1 h3, #name1 h4{
+            font-size: 111%;
+          }
+      }
+      @media (max-width: 540px) {
+        .heading, .heading1{
+            margin-left: 12%;
+          }
+          .icon{
+            height: 55px;
+            width: 55px;
+          }
+      }
+      @media (max-width: 448px) {
+        #first_line{
+          border: none;
+        }
+        #name1{
+          border-top: 1px solid black;
+        }
+        #name1 h3{
+          margin-top: 10px;
+        }
+        .heading1{
+            text-align: center;
+          }
+          #about{
+            font-size: 19px;
+          }
+        /* .heading, .heading1{
+            margin-left: 20%;
+          } */
+      }
+      @media (max-width: 368px) {
+          .icon{
+            height: 50px;
+            width: 50px;
+          }
+          
+          .card{
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+          }
+      }
+
+      
+    </style>
+</head>
+<body id="profile_body">
+  <div id="navbar"></div>
+    <div class="container">  
+      <section class="card">
+        <div id="about_div">
+          <!-- <h2 Align="center" style="font-family:'Times New Roman', Times, serif; color: blue;">About Me</h2> -->
+          <div class="container" id="first_line">
+            <div class="row">
+              <div class="col-4" id="dp">
+                <img id="dp1" src="image/about_me_bg1.png" placeholder="my picture" width="200px" height="150px">
+              </div>
+              <div class="col" id="name1">
+                <h3 class="heading">ANJANA R ARAKERIMATH</h3>
+                <h4 class="heading1" style="font-family:'Times New Roman', Times, serif; margin: 0;">Associate Professor, MCA</h4>
+              </div>
+            </div>
+          </div>
+           <p id="about" class="heading3"> 
+              "I am An academic professional with over 23 years of teaching experience, currently serving as an Associate Professor in the MCA Department at Pimpri Chinchwad College of Engineering (PCCOE) in Pune. <br><br>
+              I served as the Head of the MCA Department from July 2007 to May 2024; I played a pivotal role in setting strategic goals, enhancing the curriculum, and fostering a collaborative environment. I led initiatives to improve academic standards and infrastructure, participating in accreditation processes to ensure high educational standards. <br><br>
+              My expertise is sought for Invited talks, guest lectures, and academic reviewer. I am also appointed by Savitribai Phule Pune University (SPPU), & North Maharashtra University, Jalgaon, Maharashtra with other institutions for various academic activities, including BOS memberships, syllabus setting expert and academic auditor, Permanent affiliation committee member , Course closer committee member, faculty selection committee member.<br><br>
+              My commitment to academic excellence and continuous learning is evident through my extensive involvement in teaching and research. I strive to enhance the academic environment and foster innovation and entrepreneurship among students."
+           </p>
+        </div>
+      </section> 
+ 
+      <section class="card">
+          <div class="container">
+            <div class="row">
+              <div class="col-1">
+                <img src="image/we1.png" class="icon"  >
+              </div>
+              <div class="col">
+                <h2 class="heading">Work Experience:  </h2>
+                <h3 class="heading1">Teaching Experience: 23+ years</h3>
+              </div>
+              
+            </div>
+
+          </div>
+          <ul class="card_ul" class="heading3">
+            <li class="heading3"> Currently serving as an Associate Professor in the MCA Department at Pimpri Chinchwad College of Engineering (PCCOE) in Pune.</li>
+            <li class="heading3"> I served as the Head of the PCCoE MCA Department from July 2007 to May 2024.</li>
+            <li class="heading3">Worked as Assistance Professor ,Dr.D.Y.Patil Institute of Management & Research, Pimpri, Pune</li>
+          </ul>
+
+
+      </section>
+        
+      <section class="card">
+        <div class="container">
+          <div class="row">
+            <div class="col-1">
+              <img src="image/ed.png" class="icon" >
+            </div>
+            <div class="col">
+              <h2 class="heading" style="margin-top: 20px;">Education details: </h2>
+            </div>
+          </div>
+        </div>
+          <ul class="card_ul" class="heading3">
+              <li class="heading3">Pursing PhD at MIT ADT University</li>
+              <li class="heading3">Master of Computer Applications (MCA) at Dr.BAMU University, Aurangabad     </li>
+              <li class="heading3">Bachelor of Science (Computer)B.SC.(Comp) at Dr.BAMU University   Aurangabad     </li>
+              
+          </ul>
+      </section>
+
+      <section class="card">
+        <div class="container">
+          <div class="row">
+            <div class="col-1">
+              <img src="image/membership.jpg" class="icon" >
+            </div>
+            <div class="col">
+              <h2 class="heading">Professional Memberships:</h2>
+            </div>
+          </div>
+
+        </div>
+          <ul class="card_ul" class="heading3">
+              <li class="heading3">CSI membership, </li>
+              <li class="heading3">CEGR membership,</li>
+              <li class="heading3">ACM chapter, IAENG,</li>
+              <li class="heading3">PMI,PMA,</li>
+              <li class="heading3">BYST Membership card, Mentoring in India</li>
+              <li class="heading3">ISO Certified as an Internal Auditor</li>
+
+          </ul>
+      </section>
+
+
+      
+    </div>
+    <footer class="py-5 text-center">
+        <div class="copyright">&copy;Anjana Arakerimath. All Of The Rights Reserved</div>
+    </footer>
+    <script>
+      fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbar').innerHTML = data;
+          });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anjana Arakerimath</title>
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+      #outside_interaction_li{
+         box-shadow: 3px 2px 3px 0px #bab2b2;
+         color: rgb(182, 182, 238);
+      }
+      #invited_link{
+         color: #d06819;
+         transform:scale(1.1) ; 
+      }
+      h2{
+      text-shadow: 1px 1px 2px black; color: #0011dc;
+      }
+  </style>
+</head>
+<body> 
+    <div id="navbar"></div>
+    <div id="invited_div">
+      <h2  style="color: blue; " class="heading">Invited Talks</h2>
+      <hr>
+        <ul id="invited_ul" class="heading3">
+            <li>
+               Delivered an expert talk at Govt College of Engineering on "How to Prepare Yourself for Placement."
+            </li>
+            <li>
+               Invited as an OBE Expert for the academic review of the MCA course at Indira College of Engineering, Parntawadi, Pune.            
+            </li>
+            <li>
+               Invited as an Expert for the academic review of the MCA course at Suryadatta Institute of Management, Pune.
+            </li>
+            <li>
+               Invited as an External Examiner for MCA software project evaluation at Bharati Vidyapeet, Pune.
+            </li>
+            <li>
+               Conducted a guest session for final year project evaluation
+            </li>
+            <li>
+               Delivered a guest lecture on "Latest Software Development Trends and Predictions."
+            </li>
+            <li>
+               Delivered a guest lecture on "Overview of Software Engineering."
+            </li>
+            
+            <li>
+               Conducted a guest session at Kaveri College on the "Advances of Software Engineering."
+            </li>
+            <li>
+               Delivered lectures on "Trends in Software Engineering" to PCMC employees' corporate batches.
+            </li>
+            <li>
+               Delivered guest lectures on "CASE Studies in Software Engineering" at the MIT MCA Department, Alandi Pune.
+            </li>
+            <li>
+                Invited as Academic Expert Examiner-DIPEX-2020 Round-I organized at 
+College of Engineering, Pune (COEP)
+            </li>
+            <li>
+               Invited on various academic Activities in Bharati Veedhyapeet, Pune
+                
+            </li>
+            <li>
+               Invited as Academic Auditor at Suryadatta Institute of Management, Pune.
+            </li>
+            <li>
+               Invited as BOS member of MCA and on Suryadatta Institute of Business Management & Technology(SBIMT), Pune
+            </li>
+            <li>
+               Invited as BOS member of MCA and on Suryadatta Institute of Management & Mass communication(SIMMC), Pune 
+            </li>
+            <li>
+               Invited  for  Pimpri Chinchwad University New MCA Course structure designed.
+            </li>
+        </ul>
+
+    </div>
+    
+    <footer class="py-5 text-center" >
+        <div class="copyright" style="color: white;">&copy;Anjana Arakerimath. All Of The Rights Reserved</div>
+    </footer>
+    <script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

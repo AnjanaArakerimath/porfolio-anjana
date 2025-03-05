@@ -1,0 +1,269 @@
+.navbar{
+  height: 150px;
+  box-shadow:10px 10px 10px #10283d;
+}
+.navbar-brand{
+    font-size: 3vw;
+    margin-left: 10vw;
+    font-weight: 600;
+    color: #d9d9eb;
+    padding-bottom: 0%;
+    position: relative;
+    text-shadow: 1px 1px 5px black;
+    /* overflow: hidden; */
+}
+
+*{
+  font-family: bodoni-mt;
+}
+.heading{
+  font-size: 30px;
+  color: blue;
+  text-shadow: 1px 1px 2px black;
+}
+.heading1{
+  font-size: 22px;
+}
+.heading3{
+  font-size: 18px;
+  font-weight: 500;
+}
+.heading4{
+  font-size: 15px;
+}
+
+#home_link::after,#gallery_link::after,#contact_link::after,#profile_link::after,#research_link::after, #name::after,#achievement_link::after,#outside_interaction_link::after,#invited_link::after,#e_learning_link::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0.2vw;
+    background-color: #c2c1ff;
+    transition: 0.4s ease;
+    color: #c2c1ff;
+}
+
+#e_learning_link:hover::after,#achievement_link:hover::after,#name:hover::after,#home_link:hover::after, #gallery_link:hover::after,#contact_link:hover::after,#research_link:hover::after,#project_link:hover::after,#profile_link:hover::after,#outside_interaction_link:hover::after,#invited_link:hover::after{
+  width: 100%;
+  color: #c2c1ff;
+}
+#navbarDropdown:hover,#e_learning_link:hover, #achievement_link:hover,#home_link:hover,#name:hover,#gallery_link:hover,#contact_link:hover,#research_link:hover,#project_link:hover,#profile_link:hover,#outside_interaction_link:hover,#invited_link:hover{
+  color: #c2c1ff;
+}
+
+#navbarSupportedContent{
+    margin-left: 10%;
+}
+body{
+  background-color: white;
+}
+#index_body{
+    background: linear-gradient(100deg, #91abd9 10%, #ebc0b4 90%);
+}
+
+
+
+
+.nav-link{
+    color: aliceblue;
+    font-size: 15px;
+    font-weight: 700;
+    padding-bottom: 0%;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 1px 1px 5px black;
+}
+
+
+
+#sig_div, #research_div, #project_div, #research_w_student,#invited_div{
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(254, 255, 255);
+  padding: 2% 5% 2% 5%;
+}
+
+#sig_content, #research_ul li,#project_ul li, #research_w_student li,#invited_ul li{
+  /* font-size: 20px; */
+  font-weight: 500;
+}
+
+/* social icons */
+.effect {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  padding: 0;
+  background-color: #a85151;
+}
+.effect h2 {
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+.effect:nth-child(2) {
+  margin-top: 50px;
+}
+.effect:nth-child(2n+1) {
+  background-color: transparent;
+}
+.effect:nth-child(2n+1) h2 {
+  color: #212121;
+}
+.effect:nth-child(2n) a {
+  color: #fff;
+  border-color: #fff;
+}
+.effect .buttons {
+  margin: 0px;
+  display: flex; 
+}
+
+/* styles for a common effect !!!YOU NEED THEM */
+
+.effect a {
+  text-decoration: none !important;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 20px;
+  font-size: 25px;
+  overflow: hidden;
+  position: relative;
+  color: #317ff3;
+  border: 2px solid black; ;
+}
+.effect a i {
+  position: relative;
+  z-index: 3;
+}
+.effect a:last-child {
+  margin-right: 0px;
+}
+.effect a:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.effect a i {
+  display: inline-block;
+  vertical-align: middle;
+}
+.effect.varrius a {
+  transition: all 0.2s linear 0s;
+}
+.effect.varrius a:after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 90%;
+  top: -110%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  color: #317ff3;
+  background-color: #212121;
+  border-radius: 50%;
+}
+/* .g-plus::after{
+  background-color: #10283d;
+} */
+.effect.varrius a:hover {
+  color: #fff;
+}
+.effect.varrius a:hover:after {
+  top: 5%;
+  transition: all 0.2s linear 0s;
+}
+footer{
+  background-color: #101b38;
+  color: white;
+}
+
+@media only screen and (min-width:768px) and (max-width:992px) {
+  .navbar{
+    height: fit-content;
+  }
+}
+@media only screen and(max-width:768px) {
+  .navbar{
+    height: fit-content;
+  } 
+  .navbar-toggler{
+    background-color: #f0e4f0;
+  }
+  .navbar-brand{
+        /* color: #91abd9; */
+        margin-left: 20vw;
+        font-size: 5vw;
+  }
+  .nav-link{
+    font-size: 10px;
+  }
+  .effect .buttons{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    /* margin: auto; */
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .navbar-toggler{
+    background-color: #f0e4f0;
+  }
+  .navbar{
+    height: fit-content;
+  }
+  .navbar-brand{
+      margin-left: 20vw;
+      font-size: 20px;
+    }
+    .nav-link{
+      font-size: 12px;
+    }
+    .effect .buttons a{
+      height: 37px;
+      width: 37px;
+    }
+    
+    .heading{
+      font-size: 25px;
+      text-align: center;
+    }
+    .heading1{
+      font-size: 22px;
+    }
+    .heading3{
+      font-size: 17px;
+    }
+    .heading4{
+      font-size: 14px;
+    }
+    /* footer{
+      margin-top: 150%;
+    } */
+}
+@media only screen and (max-width:448px) {
+  .heading{
+    font-size: 25px;
+    text-align: center;
+  }
+  .heading1{
+    font-size: 20px;
+  }
+  .heading3{
+    font-size: 15px;
+  }
+  .heading4{
+    font-size: 12px;
+  }
+}

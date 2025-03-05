@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anjana Arakerimath</title>
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      body{
+          background: none;
+          background-color: rgb(200, 209, 230);
+      }
+      .navbar{
+
+        background-image: url(image/DSC_0122.JPG);
+        background-repeat: no-repeat;
+        background-size: cover;        
+      }
+      #achievement_li{
+           box-shadow: 3px 2px 3px 0px #bab2b2;
+           color: rgb(182, 182, 238);
+        }
+      #achievement_link{
+          color: #d06819;
+          transform:scale(1.1) ; 
+      }
+      .container {
+          width: 90%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      h1 {
+          margin-top: 20px;
+          text-align: center;
+          color: #ffffff;
+          margin-bottom: 20px;
+      }
+
+      .card {
+          font-weight: 700;
+          color: black;  
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          background: #fff;
+          width: 100%;
+          padding: 20px;
+          margin-left: 1%;
+          /* margin:0 0 100px 20px; */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      h2 {
+          color: #444;
+          border-bottom: 2px solid #ddd;
+          padding-bottom: 5px;
+          margin-bottom: 10px;
+      }
+
+      ul {
+          list-style-type: disc;
+          margin-left: 20px;
+          color: #555;
+      }
+
+      li {
+          margin-bottom: 10px;
+      }
+
+      @media (min-width: 768px) {
+          .container {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 20px;
+          }
+      }
+
+      @media (min-width: 1024px) {
+          .container {
+              grid-template-columns: 1fr ;
+          }
+      }
+    </style>
+</head>
+<body >
+  <div id="navbar"></div>
+
+    <h1>Professional Contributions</h1>
+    <div class="container">
+       
+        <section class="card">
+            <h2>Invited Talks</h2>
+            <ul>
+                <li>Expert talk at Govt College of Engineering on the Topic of How to prepare yourself for Placement.</li>
+                <li>Invited as OBE Expert for academic review of MCA course at Indira College of Engineering, Parntawadi, Pune.</li>
+                <li>Invited as Expert for academic review of MCA course at Suryadatta Institute of Management, Pune</li>
+                <li>Invited as External Examiner for MCA software project evaluation at Bharati Vidyapeet, Pune.</li>
+                <li>Guest Session of Final Year Project Evaluation</li>
+                <li>Guest Lecture on Latest Software Development Trends Predictions</li>
+                <li>Guest Lecture on Overview of Software Engineering</li>
+                <li>Guest Lecture on “Overview of MIS”</li>
+                <li>Guest Session at Kaveri College on Advances of SE.</li>
+                <li>Delivered lectures on “Trends in Software Engineering” to PCMC employee’s corporate Batches.</li>
+                <li>Delivered guest lectures on “CASE studies in Software Engineering” At the MIT MCA Dept, Alandi Pune.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Outside Contribution</h2>
+            <ul>
+                <li>Appointment by SPPU as MCA Closure committee member at Pune</li>
+                <li>Invited as Academic Expert Examiner-DIPEX-2020 Round-I organized at College of Engineering, Pune (COEP)</li>
+                <li>Appointment by SPPU as Permanent Affiliation member at Pune.</li>
+                <li>Appointed on various academic Activities in Bharati Veedhyapeet, Pune</li>
+                <li>Appointed on various Activities in University Examinations and Curriculum design.</li>
+                <li>Invited as Academic Auditor at Suryadatta Institute of Management, Pune.</li>
+                <li>Pimpri Chinchwad University New MCA Course structure designed.</li>
+                <li>Visit To BHAU Institute.</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h2>Member of Professional Bodies</h2>
+            <ul>
+                <li>CSI membership</li>
+                <li>CEGR membership</li>
+                <li>ACM chapter, IAENG</li>
+                <li>PMI, PMA</li>
+                <li>BYST Membership card, Mentoring in India</li>
+                <li>ISO Certified as an Internal Auditor</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Member on Bodies</h2>
+            <ul>
+                <li>PCCOE MCA Autonomous BOS chairman.</li>
+                <li>BOS member of MMS (Computer Management) courses at North Maharashtra University, Jalgaon, Maharashtra.</li>
+                <li>BOS member of BBA (E-Commerce) at North Maharashtra University, Jalgaon, Maharashtra.</li>
+            </ul>
+        </section>
+    </div>
+    <footer class="py-5 text-center">
+        <div class="copyright">&copy;Anjana Arakerimath. All Of The Rights Reserved</div>
+    </footer>
+    <script>
+      fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbar').innerHTML = data;
+          });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+</body>
+</html>
