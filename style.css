@@ -56,7 +56,12 @@
     margin-left: 10%;
 }
 body{
-  background-color: white;
+  background: linear-gradient(100deg, #91abd9 10%, #ebc0b4 90%);
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 #index_body{
     background: linear-gradient(100deg, #91abd9 10%, #ebc0b4 90%);
@@ -80,7 +85,6 @@ body{
 #sig_div, #research_div, #project_div, #research_w_student,#invited_div{
   width: 100%;
   height: fit-content;
-  background-color: rgb(254, 255, 255);
   padding: 2% 5% 2% 5%;
 }
 
@@ -183,9 +187,101 @@ body{
   top: 5%;
   transition: all 0.2s linear 0s;
 }
-footer{
+/* ======= FOOTER STYLES ======= */
+.site-footer {
   background-color: #101b38;
   color: white;
+  margin-top: auto;
+  border-top: 2px solid #c2c1ff;
+  padding: 18px 0;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.footer-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-contact {
+  flex: 1;
+  min-width: 220px;
+}
+.footer-heading {
+  color: #c2c1ff;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.footer-text {
+  color: #d9d9eb;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.footer-text i {
+  color: #c2c1ff;
+}
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.footer-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid #c2c1ff;
+  color: #c2c1ff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.footer-icon:hover {
+  background-color: #c2c1ff;
+  color: #101b38;
+  border-color: #c2c1ff;
+}
+.footer-copyright {
+  color: #d9d9eb;
+  font-size: 13px;
+  margin: 0;
+  text-align: right;
+}
+@media (max-width: 600px) {
+  .footer-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-social {
+    align-items: center;
+  }
+  .footer-icons {
+    justify-content: center;
+  }
+  .footer-copyright {
+    text-align: center;
+  }
+  .footer-contact {
+    text-align: center;
+  }
 }
 
 @media only screen and (min-width:768px) and (max-width:992px) {

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic &amp; Co-Curricular Activities — Dr. Anjana Arakerimath</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .container {
+          width: 90%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+        }
+        .card {
+            font-weight: 700;
+            color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: #fff;
+            width: 98%;
+            padding: 20px;
+            margin-left: 1%;
+            margin-top: 3%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card_ul { color: black; }
+        .icon { width:60px; height:70px; }
+        .heading { margin-left: 0; margin-top: 18px; }
+        @media (max-width: 540px) {
+          .icon { height: 55px; width: 55px; }
+        }
+        @media (max-width: 368px) {
+          .icon { height: 50px; width: 50px; }
+          .card { margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
+        }
+    </style>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <section class="card">
+        <div class="container">
+          <div class="row">
+            <div class="col-1">
+              <img src="image/econtri.png" class="icon">
+            </div>
+            <div class="col">
+              <h2 class="heading">Academic &amp; Co-Curricular Activities</h2>
+            </div>
+          </div>
+        </div>
+        <div class="card_ul" style="margin-top: 15px; padding: 10px;">
+          <h4 class="mb-4">2025 Session</h4>
+          <div class="row mb-5">
+            <div class="col-md-6 mb-3">
+              <img src="image/studentactivities/2025_session_1.png" class="img-fluid rounded shadow-sm" alt="2025 Session 1">
+            </div>
+            <div class="col-md-6 mb-3">
+              <img src="image/studentactivities/2025_session_2.png" class="img-fluid rounded shadow-sm" alt="2025 Session 2">
+            </div>
+          </div>
+          
+          <h4 class="mb-4">2026 Session</h4>
+          <div class="row mb-5">
+            <div class="col-md-6 mb-3">
+              <img src="image/studentactivities/2026_session_1.png" class="img-fluid rounded shadow-sm" alt="2026 Session 1">
+            </div>
+            <div class="col-md-6 mb-3">
+              <img src="image/studentactivities/2026_session_2.png" class="img-fluid rounded shadow-sm" alt="2026 Session 2">
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <script>
+      fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => { document.getElementById('navbar').innerHTML = data; });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => { document.getElementById('footer').innerHTML = data; });
+    </script>
+</body>
+</html>
