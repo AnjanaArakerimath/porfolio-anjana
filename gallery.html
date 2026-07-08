@@ -151,6 +151,9 @@
     <div class="h-scroll-wrapper" id="galleryWrapper">
       <!-- Moving strip -->
       <div class="h-scroll-track" id="galleryTrack">
+        <div class="slide"><img src="image/studentactivities/2025_session_2.png" alt="2025 Session 2"></div>
+        <div class="slide"><img src="image/indvisit/ind_visit_2.jpg" alt="Industrial Visit 2"></div>
+        <div class="slide"><img src="image/induction/induction_1.png" alt="Induction 1"></div>
         <div class="slide"><img src="image/gallery/1.jpg"  alt="Gallery 1"></div>
         <div class="slide"><img src="image/gallery/3.jpg"  alt="Gallery 3"></div>
         <div class="slide"><img src="image/gallery/4.jpg"  alt="Gallery 4"></div>
@@ -176,7 +179,7 @@
       </div>
 
       <!-- Counter -->
-      <div class="gallery-counter" id="galleryCounter">1 / 22</div>
+      <div class="gallery-counter" id="galleryCounter">1 / 25</div>
 
       <!-- Nav arrows -->
       <button class="gallery-btn prev" id="galleryPrev" aria-label="Previous">
@@ -241,7 +244,7 @@
     function next() { goTo(current + 1); }
     function prev() { goTo(current - 1); }
 
-    /* Auto-scroll every 1.5 s */
+    /* Auto-scroll every 3 s */
     function startAuto() {
       autoTimer = setInterval(next, 3000);
     }
