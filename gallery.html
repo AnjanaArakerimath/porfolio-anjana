@@ -3,182 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anjana Arakerimath</title>
+  <title>Gallery — Dr. Anjana Arakerimath</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ---- Gallery Page ---- */
+    #gallery-section {
+      padding: 30px 20px 40px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .gallery-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #101b38;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+
+    .gallery-underline {
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #91abd9, #c2c1ff);
+      border-radius: 4px;
+      margin: 0 auto 30px;
+    }
+
+    /* ---- Horizontal scroll track wrapper ---- */
+    .h-scroll-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+      background: transparent;
+    }
+
+    /* The moving strip */
+    .h-scroll-track {
+      display: flex;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    /* Each slide cell */
+    .h-scroll-track .slide {
+      flex: 0 0 auto;
+      width: 100%;
+      height: 480px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(100deg, #c5d4ec 10%, #e8c8c0 90%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .h-scroll-track .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;   /* show full photo — no cropping */
+      display: block;
+    }
+
+    /* Slide counter badge */
+    .gallery-counter {
+      position: absolute;
+      bottom: 14px;
+      right: 18px;
+      background: rgba(16, 27, 56, 0.7);
+      color: #c2c1ff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: 10;
+      letter-spacing: 0.5px;
+    }
+
+    /* Prev / Next arrow buttons */
+    .gallery-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      background: rgba(0, 0, 0, 0.2);
+      border: 2px solid black;
+      color: black;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .gallery-btn.prev { left: 10px; }
+    .gallery-btn.next { right: 10px; }
+
+    /* Dot indicators */
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .gallery-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(16, 27, 56, 0.25);
+      border: 2px solid #91abd9;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .gallery-dot.active {
+      background: #c2c1ff;
+      border-color: #c2c1ff;
+      transform: scale(1.3);
+    }
+
+    @media (max-width: 600px) {
+      .h-scroll-track .slide { height: 220px; }
+      .gallery-title { font-size: 1.4rem; }
+      .gallery-btn { width: 34px; height: 34px; font-size: 0.85rem; }
+    }
+    @media (min-width: 601px) and (max-width: 992px) {
+      .h-scroll-track .slide { height: 340px; }
+    }
+  </style>
   <link href="style.css" rel="stylesheet">
-    <style>
-      body{
-        background: linear-gradient(100deg, #f5f7fb 10%, #ffffff 90%);
-      }
-      
-      #c1, #c2{
-        box-shadow: 2px 1px 10px rgb(97 86 86);
-      }
-      #gallery_li{
-        box-shadow: 3px 2px 3px 0px #bab2b2;
-      }
-      #gallery_link{
-        color: #d06819;
-        transform:scale(1.1) ; 
-      }
-      img{
-        width: 100%;
-        height: 500px;
-      }
-      .carousel {
-          position: relative;
-          width: 40%;
-          height: 400px;
-          overflow: hidden;
-          margin: 50px;
-      }
-      .carousel img {
-          /* width: 100%;
-          height: 100%; */
-          position: absolute;
-          opacity: 0;
-          transition: opacity 1s ease-in-out;
-      }
-      .carousel img.active {
-          opacity: 1;
-      }
-      #c3
-      {
-        display: flex;
-      }
-      h1{
-        margin-top: 50px; 
-        margin-left: 44%;
-      }
-      #underline_div{
-          width: 150px; 
-          height: 5px; 
-          background-color: #51536f; 
-          margin-left: 45%;
-        }
-      
-      @media (max-width: 768px) {
-          #c3 {
-              display: grid;
-              grid-template-columns: 1fr;
-              gap: 20px;
-              height: 350px;
-              width: 80%;
-              margin-left: 2%;
-          }
-          .carousel{
-            height: 350px;
-            width: 100%;
-          }
-          footer{
-            margin-top: 555px;
-          }
-          
-      }
-      @media (max-width: 368px){
-        h1{
-          margin-left: 26%;
-        }
-        #underline_div{
-          margin-left: 20%;
-        }
-        #c3{
-          height: 400px;
-          width: 100%;
-          margin-left: 0;
-        }
-        #c2,#c1{
-          height: 100%;
-          width: 100%;
-          margin-left: 0;
-        }
-        img{
-          height: 100%;
-          width: 100%;
-        }
-        footer{
-          margin-top: 50%;
-        }
-        
-      }
-       
-    </style>
 </head>
 <body id="gallery_body">
   <div id="navbar"></div>
-  <h1 >My Gallery</h1>
-  <div id="underline_div"></div>
-    <div class="container" id="c3">
 
-    <div class="carousel" id="c2">
-        <img src="image/gallery/1.jpg" alt=" 1" class="active">
-        <img src="image/gallery/3.jpg" alt=" 3">
-        <img src="image/gallery/4.jpg" alt=" 4">
-        <img src="image/gallery/5.jpg" alt=" 5">
-        <!-- <img src="image/gallery/6.jpg" alt=" 6"> -->
-        <img src="image/gallery/7.jpg" alt=" 7">
-        <img src="image/gallery/8.jpg" alt=" 8">
-        <!-- <img src="image/gallery/9.jpg" alt=" 9"> -->
-        <img src="image/gallery/10.jpg" alt=" 10">
-        <img src="image/gallery/11.jpg" alt=" 11">
-        <img src="image/gallery/12.jpg" alt=" 12">
-        <img src="image/gallery/13.jpg" alt=" 13">
-        <img src="image/gallery/27.jpg" alt=" 3">
+  <section id="gallery-section">
+    <h1 class="gallery-title">My Gallery</h1>
+    <div class="gallery-underline"></div>
+
+    <div class="h-scroll-wrapper" id="galleryWrapper">
+      <!-- Moving strip -->
+      <div class="h-scroll-track" id="galleryTrack">
+        <div class="slide"><img src="image/gallery/1.jpg"  alt="Gallery 1"></div>
+        <div class="slide"><img src="image/gallery/3.jpg"  alt="Gallery 3"></div>
+        <div class="slide"><img src="image/gallery/4.jpg"  alt="Gallery 4"></div>
+        <div class="slide"><img src="image/gallery/5.jpg"  alt="Gallery 5"></div>
+        <div class="slide"><img src="image/gallery/7.jpg"  alt="Gallery 7"></div>
+        <div class="slide"><img src="image/gallery/8.jpg"  alt="Gallery 8"></div>
+        <div class="slide"><img src="image/gallery/10.jpg" alt="Gallery 10"></div>
+        <div class="slide"><img src="image/gallery/11.jpg" alt="Gallery 11"></div>
+        <div class="slide"><img src="image/gallery/12.jpg" alt="Gallery 12"></div>
+        <div class="slide"><img src="image/gallery/13.jpg" alt="Gallery 13"></div>
+        <div class="slide"><img src="image/gallery/27.jpg" alt="Gallery 27"></div>
+        <div class="slide"><img src="image/gallery/14.jpg" alt="Gallery 14"></div>
+        <div class="slide"><img src="image/gallery/17.jpg" alt="Gallery 17"></div>
+        <div class="slide"><img src="image/gallery/18.jpg" alt="Gallery 18"></div>
+        <div class="slide"><img src="image/gallery/19.jpg" alt="Gallery 19"></div>
+        <div class="slide"><img src="image/gallery/20.jpg" alt="Gallery 20"></div>
+        <div class="slide"><img src="image/gallery/21.jpg" alt="Gallery 21"></div>
+        <div class="slide"><img src="image/gallery/22.jpg" alt="Gallery 22"></div>
+        <div class="slide"><img src="image/gallery/23.jpg" alt="Gallery 23"></div>
+        <div class="slide"><img src="image/gallery/24.jpg" alt="Gallery 24"></div>
+        <div class="slide"><img src="image/gallery/25.jpg" alt="Gallery 25"></div>
+        <div class="slide"><img src="image/gallery/26.jpg" alt="Gallery 26"></div>
+      </div>
+
+      <!-- Counter -->
+      <div class="gallery-counter" id="galleryCounter">1 / 22</div>
+
+      <!-- Nav arrows -->
+      <button class="gallery-btn prev" id="galleryPrev" aria-label="Previous">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="gallery-btn next" id="galleryNext" aria-label="Next">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
-    <div class="carousel" id="c1">
-      <img src="image/gallery/14.jpg" alt=" 1" class="active">
-        <!-- <img src="image/gallery/15.jpg" alt=" 2">
-        <img src="image/gallery/16jpg" alt=" 3"> -->
-        <img src="image/gallery/17.jpg" alt=" 17">
-        <img src="image/gallery/18.jpg" alt=" 18">
-        <img src="image/gallery/19.jpg" alt=" 19">
-        <img src="image/gallery/20.jpg" alt=" 20">
-        <img src="image/gallery/21.jpg" alt=" 21">
-        <img src="image/gallery/22.jpg" alt=" 22">
-        <img src="image/gallery/23.jpg" alt=" 23">
-        <img src="image/gallery/24.jpg" alt=" 24">
-        <img src="image/gallery/25.jpg" alt=" 25">
-        <img src="image/gallery/26.jpg" alt=" 26">
-  </div>
-    </div>
-    <footer class="py-5 text-center">
-      <div class="copyright">&copy;Anjana Arakerimath. All Of The Rights Reserved</div>
-    </footer>
-    <script>
-      fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar').innerHTML = data;
-        });
 
+    <!-- Dot indicators -->
+    <div class="gallery-dots" id="galleryDots"></div>
+  </section>
 
-        const images = document.querySelectorAll('#c2 img');
-        let currentIndex = 0;
+  <div id="footer"></div>
 
-        function changeImage() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
+  <script>
+    fetch('navbar.html')
+      .then(r => r.text())
+      .then(d => { document.getElementById('navbar').innerHTML = d; });
+  </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-        const images1 = document.querySelectorAll('#c1 img');
-        let currentIndex1 = 0;
-       
-        function changeImage1() {
-            images1[currentIndex1].classList.remove('active');
-            currentIndex1 = (currentIndex1 + 1) % images1.length;
-            images1[currentIndex1].classList.add('active');
-        }
+  <script>
+    fetch('footer.html')
+      .then(r => r.text())
+      .then(d => { document.getElementById('footer').innerHTML = d; });
+  </script>
 
-        setInterval(changeImage, 3500);
-        setInterval(changeImage1, 2900);
+  <script>
+    const track    = document.getElementById('galleryTrack');
+    const slides   = track.querySelectorAll('.slide');
+    const counter  = document.getElementById('galleryCounter');
+    const dotsWrap = document.getElementById('galleryDots');
+    const total    = slides.length;
+    let current    = 0;
+    let autoTimer;
 
-    </script>
-    
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    /* Build dots */
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
 
+    function updateDots() {
+      dotsWrap.querySelectorAll('.gallery-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      counter.textContent = `${current + 1} / ${total}`;
+      updateDots();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    /* Auto-scroll every 1.5 s */
+    function startAuto() {
+      autoTimer = setInterval(next, 3000);
+    }
+    function stopAuto() {
+      clearInterval(autoTimer);
+    }
+
+    /* Pause on hover, resume on leave */
+    const wrapper = document.getElementById('galleryWrapper');
+    wrapper.addEventListener('mouseenter', stopAuto);
+    wrapper.addEventListener('mouseleave', startAuto);
+
+    /* Arrow buttons */
+    document.getElementById('galleryNext').addEventListener('click', () => { stopAuto(); next(); startAuto(); });
+    document.getElementById('galleryPrev').addEventListener('click', () => { stopAuto(); prev(); startAuto(); });
+
+    /* Touch swipe support */
+    let touchStartX = 0;
+    wrapper.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; stopAuto(); }, { passive: true });
+    wrapper.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+      startAuto();
+    }, { passive: true });
+
+    /* Kick off */
+    startAuto();
+  </script>
 </body>
 </html>

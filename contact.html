@@ -6,13 +6,12 @@
     <title>Anjana Arakerimath</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="style.css" rel="stylesheet">
     <style>
-     
       body {
         margin: 0;
         padding: 0;
-        background-color: aliceblue;
+        background: linear-gradient(100deg, #f5f7fb 10%, #ffffff 90%);
+        font-family: "Poppins", sans-serif;
       }
       #contact_link{
         color: #d06819;
@@ -21,147 +20,190 @@
       #contact_li{
         box-shadow: 3px 2px 3px 0px #bab2b2;
       }
-      .section-header{
-        margin: 20px 0 20px 0;
-        text-decoration: underline;
+
+      .contact-wrapper {
+        max-width: 1100px;
+        margin: 40px auto 60px;
+        padding: 0 20px;
       }
-      #contact_div{
-        height: 800px;
+
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #101b38;
+        margin-bottom: 6px;
+        letter-spacing: 1px;
       }
-      #map_col{
-        margin: 0 2% 0 4%;
-       
+
+      .section-underline {
+        width: 120px;
+        height: 4px;
+        background: linear-gradient(90deg, #91abd9, #c2c1ff);
+        border-radius: 4px;
+        margin: 0 auto 40px;
       }
-      #form_col{
-        margin: 2%;
-       
+
+      .contact-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(16, 27, 56, 0.08);
+        padding: 35px;
+        height: 100%;
+        border: none;
+      }
+
+      .contact-heading {
+        color: #101b38;
+        font-weight: 700;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .contact-heading i {
+        color: #91abd9;
+      }
+
+      .address-text {
+        font-size: 1.05rem;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 25px;
+      }
+
+      .map-iframe {
+        width: 100%;
+        height: 320px;
+        border-radius: 12px;
+        border: none;
+      }
+
+      /* Social Buttons */
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 35px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #eee;
+      }
+      .social-btn {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #f5f7fb;
+        color: #101b38;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+      .social-btn img {
+        width: 24px;
+        height: 24px;
+      }
+      .social-btn:hover {
+        background: #c2c1ff;
+        color: #101b38;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(194,193,255,0.5);
+      }
+
+      /* Form Styling */
+      .form-control {
+        border-radius: 8px;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        background: #fafafa;
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+      .form-control:focus {
+        border-color: #91abd9;
+        box-shadow: 0 0 0 3px rgba(145, 171, 217, 0.2);
+        background: #fff;
       }
       
-      #map_col, #form_col{
-          display: inline-block;
-          width: 44%;
-        }
-      .form-group{
-          box-shadow: 1px 1px 5px #d4d2d2; 
-          width: 100%;     
-        }
-      .form-control{
-        margin: 20px;
-        
+      .send-btn {
+        background: linear-gradient(135deg, #101b38 0%, #1e3a5f 100%);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
       }
-      #office_ad{
-        font-size: 25px;
-        color: rgb(12, 19, 159); 
+      .send-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(16, 27, 56, 0.25);
+        color: white;
       }
-      #office_dec{
-        font-size: 20px;
+
+      @media (max-width: 768px) {
+        .contact-card { padding: 25px; }
       }
-      #map{
-        width: 80%;
-        height: 420px;
-        margin-top: 5%;
-      }
-      #submit{
-        margin-left: 20px;
-      }
-      footer{
-        margin-top: 10px;
-      }
-      .effect .buttons{
-        justify-content: center; 
-         box-shadow: 1px 1px 5px rgb(189 190 194); 
-        background-color: #f4f4ee;
-      }
-      @media only screen and (max-width:768px) {
-        #map_col, #form_col{
-          display: block;
-          width: 90%;
-          padding: 0;
-        }
-        #map{
-          width: 90%;
-        }
-        
-      }
-      @media only screen and (max-width:400px) {
-        #office_ad{
-          font-size: 20px;
-        }
-        #office_desc{
-          font-size: 15px;
-        }
-        #map{
-          height: 200px;
-          /* margin-left: 2%; */
-          width: 98%;
-        }
-        .form-control{
-          margin-left: 3%;
-        }
-        .effect .buttons{
-          width: 100%;
-          margin-left: 2%;
-        }
-      }
-      </style>
+    </style>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body id="contact_body">
   <div id="navbar"></div>
 
-  <section id="contact">
+  <section id="contact" class="contact-wrapper">
+    <h1 class="section-title">Contact Me</h1>
+    <div class="section-underline"></div>
 
-    <h1 class="section-header" align="center">Contact</h1>
-          <div class="col" id="map_col">
-            <p id="office_ad">Office Address: </p>
-            <p id="office_desc">
-              Department of MCA, <br>
-              Pimpri Chinchwad College of Engineering,<br>
-              Sector - 26, Pradhikaran, Nigdi, Pune - 411 044, India.
-            </p>
-            <iframe id="map"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.273282914893!2d73.75906487496628!3d18.651728782467472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e76c8fa205%3A0x1b210131915734fd!2sPCCOE%20-%20Pimpri%20Chinchwad%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1723305831159!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+    <div class="row g-4">
+      <!-- Left Column: Address & Map -->
+      <div class="col-lg-6">
+        <div class="contact-card">
+          <h3 class="contact-heading"><i class="fa-solid fa-location-dot"></i> Office Address</h3>
+          <p class="address-text">
+            Department of MCA, <br>
+            Pimpri Chinchwad College of Engineering,<br>
+            Sector - 26, Pradhikaran, Nigdi, Pune - 411 044, India.
+          </p>
+          <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.273282914893!2d73.75906487496628!3d18.651728782467472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e76c8fa205%3A0x1b210131915734fd!2sPCCOE%20-%20Pimpri%20Chinchwad%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1723305831159!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
 
-          <div class="col" id="form_col">
-            <div class="effect varrius">
-              <div class="buttons" >
-                
-                <a href="https://www.instagram.com/arakerimathanjana?igsh=MXA4d2plMG4xY3Y5cw=="  class="insta" title="Join us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/anjana-arakerimath-47a606147/"  class="in" title="Join us on Linked In"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://scholar.google.co.in/citations?user=Sgd9lfcAAAAJ&hl=en"  class="g-plus" title=" google scholor">      
-                  <img src="image/google_scholor_logo.png" width="30px" height="30px">
-                </a>
-                <a href="mailto: a.anjana@pccoepune.org"   class="fb" title="a.anjana@pccoepune.org">
-                  <i class="fa fa-envelope-open-text"></i>
-                </a>
-              </div>
-            
-            <form id="contact-form" class="form-horizontal" role="form" action="https://formspree.io/f/movabzwg" method="POST">
+      <!-- Right Column: Socials & Form -->
+      <div class="col-lg-6">
+        <div class="contact-card">
           
-              <div class="form-group">
-                
-                <input type="text" class="form-control" style="width: 92%;" id="name" placeholder="NAME" name="name" value="" required>
-              
-                <input type="email" class="form-control" style="width: 92%;" id="email" placeholder="EMAIL" name="email" value="" required>
-               
-                <textarea class="form-control" rows="10" style="width: 92%;" placeholder="MESSAGE" name="message" required></textarea>
-              
-                <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-                  <div class="alt-send-button">
-                    <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
-                  </div>
-                </button>
-              </div>
-              
-            </form>
+          <div class="social-links">
+            <a href="https://www.instagram.com/arakerimathanjana?igsh=MXA4d2plMG4xY3Y5cw==" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/anjana-arakerimath-47a606147/" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://scholar.google.co.in/citations?user=Sgd9lfcAAAAJ&hl=en" class="social-btn" title="Google Scholar"><img src="image/google_scholor_logo.png" alt="Scholar"></a>
+            <a href="mailto:a.anjana@pccoepune.org" class="social-btn" title="Email"><i class="fa fa-envelope-open-text"></i></a>
           </div>
-       
-      
-    
-  </section>  
 
-  <footer class="py-5 text-center">
-      <div class="copyright" style="color: white;">&copy;Anjana Arakerimath. All Of The Rights Reserved</div>
-  </footer>
+          <h3 class="contact-heading" style="margin-bottom: 20px;"><i class="fa-regular fa-paper-plane"></i> Send a Message</h3>
+          
+          <form id="contact-form" action="https://formspree.io/f/xgojbbnj" method="POST">
+            <input type="text" class="form-control" id="name" placeholder="Full Name" name="name" required>
+            <input type="email" class="form-control" id="email" placeholder="Email Address" name="email" required>
+            <textarea class="form-control" rows="5" placeholder="Your Message..." name="message" required></textarea>
+            
+            <button class="send-btn" type="submit">
+              <i class="fa fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>  <div id="footer"></div>
   <script>
     fetch('navbar.html')
         .then(response => response.text())
@@ -172,5 +214,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
       
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('footer').innerHTML = data;
+      });
+  </script>
 </body>
 </html>

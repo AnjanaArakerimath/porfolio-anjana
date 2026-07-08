@@ -4,168 +4,410 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anjana Arakerimath</title>
-    <link href="style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- FontAwesome 6 icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      .navbar{
-        height: 150px;
-        box-shadow:10px 10px 10px #000000;
-        background-color: #10283d;
-      }
-      .navbar-brand{
-        font-size: 3vw;
-        margin-left: 8vw;
-        font-weight: 600;
-        color: #d9d9eb;
-        padding-bottom: 0%;
-        position: relative;
-        text-shadow: 1px 1px 5px black;
-      }
-      .nav-link{
-        color: aliceblue;
-        font-size: 15px;
-        font-weight: 700;
-        padding-bottom: 0%;
-        position: relative;
-        overflow: hidden;
-        text-shadow: 1px 1px 5px black;
-      }
-        
-        
-      .navbar-toggler{
-        background-color: white;
-      }
-      #navbarSupportedContent{
-        margin-left: 4%;
-      }
-      @media only screen and (max-width:1290px){
-        .nav-link{
-          font-size: 12px;
-        }
-      }
-      @media only screen and (max-width:1200px){
-        .navbar-brand{
-          font-size: 3vw;
-        }
-        .nav-link{
-          font-size: 11px;
-        }
-      }
-      @media only screen and (max-width:1090px){
-        .nav-link{
-          font-size: 10px;
-        }
-        #navbarSupportedContent{
-          margin-left: 5%;
-        }
-      }
-      @media only screen and (max-width:992px){
-        
-        .navbar{
-            height: fit-content;
-        }
-        .navbar-brand{
-            font-size: 30px;
-        }
-        .dropdown-item{
-          font-size: 20px;
-        }
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-      }
-      @media only screen and (min-width:600px) and (max-width:768px) {
-        .navbar{
-            height: fit-content;
-        }
-        .dropdown-item{
-          font-size: 15px;
-        }
-      }
-      @media only screen and (max-width:600px) {
-        .navbar{
-            height: fit-content;
-            padding: 0;
-        }
-        .navbar-brand{
-            font-size: 15px;
-            margin-right: 0;
-        }
-        .dropdown-item{
-          font-size: 10px;
-        }
-        .navbar-toggler-icon{
-          margin: 0;
-          height: 10px;
-          width: 10px;
-        }
-        .navbar-toggler{
-          padding: 0;
-          margin-left: 0;
-          height: 40px;
-          width: 30px;
-        }
-        .nav-link{
-          font-size: 10px;
-        }
-        footer{
-          font-size: 15px;
-        }
-      }
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 4.5rem;
+  --first-color: #c2c1ff;
+  --first-color-lighten: #1e3a5f;
+  --title-color: #d9d9eb;
+  --text-color: aliceblue;
+  --nav-bg-color: #10283d;
+  --nav-font: "Poppins", sans-serif;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
 
-        
+/*=============== REUSABLE CSS CLASSES ===============*/
+.nav-container {
+  max-width: 100%;
+  margin-inline: 0;
+  padding-inline: 1rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  position: relative;
+  width: 100%;
+  box-shadow: 10px 10px 10px #000000;
+  background-color: var(--nav-bg-color);
+  z-index: var(--z-fixed);
+  font-family: var(--nav-font);
+}
+
+/*=============== NAV ===============*/
+/* Renamed .nav to .nav-custom to avoid conflicts with Bootstrap's .nav */
+.nav-custom {
+  height: var(--header-height);
+  flex-wrap: nowrap !important;
+}
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.3s;
+  font-size: 1.45rem;
+  text-shadow: 1px 1px 5px black;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav__logo:hover {
+  color: var(--first-color);
+}
+.nav__toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+.nav__toggle-menu, .nav__toggle-close {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  position: absolute;
+  display: grid;
+  place-items: center;
+  inset: 0;
+  cursor: pointer;
+  transition: opacity 0.1s, transform 0.4s;
+}
+.nav__toggle-close {
+  opacity: 0;
+}
+@media screen and (max-width: 1118px) {
+  .nav__menu {
+    background-color: var(--nav-bg-color);
+    position: absolute;
+    left: 0;
+    top: 4.5rem;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    padding-block: 1.5rem 4rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: top 0.4s, opacity 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  }
+}
+.nav__link {
+  color: var(--text-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  text-shadow: 1px 1px 5px black;
+  font-size: 0.95rem;
+}
+.nav__link:hover {
+  background-color: var(--first-color-lighten);
+  color: var(--first-color);
+}
+
+/* Show menu */
+.show-menu {
+  opacity: 1;
+  top: 4.5rem;
+  pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .nav__toggle-menu {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.show-icon .nav__toggle-close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/*=============== DROPDOWN ===============*/
+.dropdown__item {
+  cursor: pointer;
+}
+.dropdown__arrow {
+  font-size: 1.2rem;
+  font-weight: initial;
+  transition: transform 0.4s;
+}
+.dropdown__content, .dropdown__group, .dropdown__list {
+  display: grid;
+}
+.dropdown__container {
+  background-color: var(--first-color-lighten);
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s;
+}
+.dropdown__content {
+  row-gap: 1.75rem;
+}
+.dropdown__group {
+  padding-left: 2.5rem;
+  row-gap: 0.5rem;
+}
+.dropdown__group:first-child {
+  margin-top: 1.25rem;
+}
+.dropdown__group:last-child {
+  margin-bottom: 1.25rem;
+}
+.dropdown__list {
+  row-gap: 0.25rem;
+  padding-left: 0;
+}
+.dropdown__link {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+  transition: color 0.3s;
+  text-decoration: none;
+}
+.dropdown__link:hover {
+  color: var(--first-color);
+}
+
+/* Rotate dropdown icon */
+.show-dropdown .dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+/*=============== BREAKPOINTS ===============*/
+@media screen and (min-width: 1118px) {
+  .nav-custom {
+    height: calc(var(--header-height) + 2rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list {
+    display: flex;
+    column-gap: 0.5rem;
+    height: 100%;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  .nav__list li {
+    display: flex;
+    align-items: center;
+  }
+  .nav__link {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.95rem;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.07);
+    transition: background-color 0.25s, color 0.25s, box-shadow 0.25s;
+  }
+  .nav__link:hover {
+    background-color: var(--first-color);
+    color: #101b38;
+    box-shadow: 0 2px 10px rgba(194,193,255,0.4);
+    text-shadow: none;
+  }
+  .dropdown__button {
+    column-gap: 0.25rem;
+    pointer-events: none;
+  }
+  .dropdown__container {
+    height: max-content;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--nav-bg-color);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.5);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    min-width: max-content;
+    border-radius: 4px;
+    z-index: 1000;
+  }
+  .dropdown__content {
+    grid-template-columns: repeat(1, max-content);
+    column-gap: 2rem;
+  }
+  .dropdown__group {
+    padding: 1rem 1.5rem;
+    row-gap: 0.5rem;
+  }
+  .dropdown__item {
+    position: relative;
+    padding-bottom: 1rem; /* Adds safe hover area below the item */
+    margin-bottom: -1rem; /* Offsets the padding visually */
+  }
+  .dropdown__item:hover .dropdown__arrow {
+    transform: rotate(180deg);
+  }
+  .dropdown__item:hover > .dropdown__container {
+    opacity: 1;
+    pointer-events: initial;
+    cursor: initial;
+  }
+}
+@media screen and (min-width: 1152px) {
+  .nav-container {
+    margin-inline: auto;
+  }
+}
     </style>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-   <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top">
-        <a class="navbar-brand" href="index.html" id="name">ANJANA R ARAKERIMATH </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active" id="home_li">
-              <a class="nav-link" id="home_link" href="index.html" title="HOME">Home</a>
-            </li>
-            <li class="nav-item" id="profile_li">
-              <a class="nav-link" href="profile.html" id="profile_link" title="EXPERIENCE & EDUCATION">Profile</a>
-            </li>
-            <li class="nav-item" id="e_learning_li">
-              <a class="nav-link" href="e_learning.html" id="e_learning_link">E-Learning</a>
-            </li>
-            <li class="nav-item dropdown" id="research_li">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                Research
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="sig.html" id="research_link">Special Interest Groups</a>
-                <a class="dropdown-item" href="project.html" id="project_link">Projects</a>
-                  <!-- <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a> -->
-              </div>
-            </li>
-            <li class="nav-item dropdown" id="outside_interaction_li">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                Outside Interaction
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="outside_interaction.html" id="outside_interaction_link">Outside Interaction</a>
-                <a class="dropdown-item" href="invited_talk.html" id="invited_link">Invited As</a>  
-              </div>
-            </li>
-            <li class="nav-item" id="Rangoli_li">
-              <a class="nav-link" href="Rangoli.html" id="Rangoli_link" title="EXPERIENCE & EDUCATION">My Creativity</a>
-            </li>
-            <li class="nav-item active" id="gallery_li">
-                <a class="nav-link" href="gallery.html" id="gallery_link" title="GALLERY">Gallery</a>
-            </li>
-            <li class="nav-item active" id="contact_li">
-            <a class="nav-link" href="contact.html" id="contact_link" >Contact</a>
-            </li>
-          </ul>
-        </div>
-    </nav>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   <header class="header">
+      <nav class="nav-custom nav-container">
+         <div class="nav__data">
+            <a href="index.html" class="nav__logo" id="name">
+               Dr. ANJANA ARAKERIMATH
+            </a>
+            
+            <div class="nav__toggle" id="nav-toggle">
+               <!-- Fixed font awesome classes -->
+               <i class="fa-solid fa-bars nav__toggle-menu"></i>
+               <i class="fa-solid fa-xmark nav__toggle-close"></i>
+            </div>
+         </div>
 
+         <!--=============== NAV MENU ===============-->
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="index.html" class="nav__link" title="HOME">Home</a></li>
+               <li><a href="profile.html" class="nav__link" title="EXPERIENCE & EDUCATION">Profile</a></li>
+               <li><a href="e_learning.html" class="nav__link">E-Learning</a></li>
+
+               <!--=============== DROPDOWN - Student Engagement ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link dropdown__button">
+                     Student Engagement <span class="dropdown__arrow">&#9662;</span>
+                  </div>
+
+                  <div class="dropdown__container">
+                     <div class="dropdown__content">
+                        <div class="dropdown__group">
+                           <ul class="dropdown__list">
+                              <li><a href="academic_activities.html" class="dropdown__link">Academic &amp; Co-Curricular Activities</a></li>
+                              <li><a href="industrial_visits.html" class="dropdown__link">Industrial Visits (IV)</a></li>
+                              <li><a href="student_induction.html" class="dropdown__link">Student Induction Program</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+
+               <!--=============== DROPDOWN 1 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link dropdown__button">
+                     Research <span class="dropdown__arrow">&#9662;</span>
+                  </div>
+
+                  <div class="dropdown__container">
+                     <div class="dropdown__content">
+                        <div class="dropdown__group">
+                           <ul class="dropdown__list">
+                              <li><a href="sig.html" class="dropdown__link">Special Interest Groups</a></li>
+                              <li><a href="project.html" class="dropdown__link">Projects</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+
+               <!--=============== DROPDOWN 2 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link dropdown__button">
+                     Interactions <span class="dropdown__arrow">&#9662;</span>
+                  </div>
+
+                  <div class="dropdown__container">
+                     <div class="dropdown__content">
+                        <div class="dropdown__group">
+                           <ul class="dropdown__list">
+                              <li><a href="outside_interaction.html" class="dropdown__link">Outside Interaction</a></li>
+                              <li><a href="invited_talk.html" class="dropdown__link">Invited As</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+
+               <li><a href="Rangoli.html" class="nav__link" title="My Creativity">Creativity</a></li>
+               <li><a href="gallery.html" class="nav__link" title="GALLERY">Gallery</a></li>
+               <li><a href="contact.html" class="nav__link">Contact</a></li>
+            </ul>
+         </div>
+      </nav>
+   </header>
+
+   <script>
+      /*=============== SHOW MENU ===============*/
+      const showMenu = (toggleId, navId) =>{
+         const toggle = document.getElementById(toggleId),
+               nav = document.getElementById(navId)
+
+         if(toggle && nav) {
+             toggle.addEventListener('click', () =>{
+                nav.classList.toggle('show-menu')
+                toggle.classList.toggle('show-icon')
+             })
+         }
+      }
+      showMenu('nav-toggle','nav-menu')
+
+      /*=============== SHOW DROPDOWN MENU ===============*/
+      const dropdownItems = document.querySelectorAll('.dropdown__item')
+      dropdownItems.forEach((item) =>{
+          const dropdownButton = item.querySelector('.dropdown__button') 
+          if(dropdownButton) {
+              dropdownButton.addEventListener('click', () =>{
+                  const showDropdown = document.querySelector('.show-dropdown')
+                  toggleItem(item)
+                  if(showDropdown && showDropdown!== item){
+                      toggleItem(showDropdown)
+                  }
+              })
+          }
+      })
+
+      const toggleItem = (item) =>{
+          const dropdownContainer = item.querySelector('.dropdown__container')
+          if(item.classList.contains('show-dropdown')){
+              dropdownContainer.removeAttribute('style')
+              item.classList.remove('show-dropdown')
+          } else{
+              dropdownContainer.style.height = dropdownContainer.scrollHeight + 'px'
+              item.classList.add('show-dropdown')
+          }
+      }
+   </script>
 </body>
 </html>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anjana Arakerimath</title>
-    <link href="style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -51,17 +50,13 @@
             margin-left: 0;
             margin-top: 18px;
       }
-      footer{
-        margin-top: 60px;
-      }
+      
 
       @media (max-width: 992px) {
         .heading, .heading1{
             margin-left: 7%;
           }
-          footer{
-                margin-top: 150px;
-            }
+          
       }
       @media (max-width: 768px) {
         #name1 h3, #name1 h4{
@@ -99,6 +94,7 @@
       }
 
     </style>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body id="outside_interaction_body">
     <div id="navbar"></div>
@@ -116,13 +112,14 @@
 
         </div>
           <ul class="card_ul" class="heading3">
-            <li class="heading3">SPPU Appointment on LIC committee for the Closure of MCA (Commerce) Course at Pune.</li>     
-           <li class="heading3">Appointment by SPPU as Permanent Affiliation member at Pune.</li>      
-           <li class="heading3">Invited as Academic Auditor at Suryadatta Institute of Management, Pune.</li>      
-           <li class="heading3">Invited as Academic Expert Examiner-DIPEX-2020 Round-I organized at College of Engineering, Pune (COEP)</li>      
-           <li class="heading3">Appointed on various academic Activities in Bharati Veedhyapeet, Pune</li>      
-           <li class="heading3">Appointed on various Activities in University Examinations and Curriculum design.</li>      
-           <li class="heading3">Pimpri Chinchwad University New MCA Course structure designed.</li>      
+            <li class="heading3">Member, Board of Studies (BOS) – External University</li>
+            <li class="heading3">Appointed by Savitribai Phule Pune University (SPPU) on the Local Inquiry Committee (LIC), Pune</li>
+            <li class="heading3">Permanent Affiliation Committee Member, SPPU</li>
+            <li class="heading3">Invited BoS &amp; Academic Auditor at Suryadatta Institute of Management, Pune</li>
+            <li class="heading3">Academic Expert Examiner, DIPEX 2020 (Round I), College of Engineering, Pune (COEP)</li>
+            <li class="heading3">Associated with academic activities at Bharati Vidyapeeth, Pune</li>
+            <li class="heading3">Active involvement in university examinations and curriculum design</li>
+            <li class="heading3">Contributor to MCA course structure design at Pimpri Chinchwad University</li>
           </ul>
       </section>
       <section class="card">
@@ -144,10 +141,7 @@
             <li class="heading3">BOS member of MCA and on Suryadatta Institute of Business Management & Technology(SBIMT), Pune</li>
             <li class="heading3">BOS member of MCA and on Suryadatta Institute of Management & Mass communication(SIMMC), Pune</li>
           </ul>
-      </section>
-    <footer class="py-5 text-center">
-        <div class="copyright">&copy;Anjana Arakerimath. All Of The Rights Reserved</div>
-    </footer>
+      </section>  <div id="footer"></div>
     <script>
       fetch('navbar.html')
           .then(response => response.text())
@@ -157,5 +151,12 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('footer').innerHTML = data;
+      });
+  </script>
 </body>
 </html>
