@@ -3,259 +3,403 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anjana Arakerimath</title>
+  <title>My Creativity — Dr. Anjana Arakerimath</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* ---- Gallery Page ---- */
+    #gallery-section {
+      padding: 30px 20px 40px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
 
-      #Rangoli_li{
-        box-shadow: 3px 2px 3px 0px #bab2b2;
-      }
-      #Rangoli_link{
-        color: #d06819;
-        transform:scale(1.1) ; 
-      }
-      .heading{
-        margin-top: 20px;
-        text-align: center;
-      }
-      #c3{
-        /* height removed to prevent overflow */
-      }
-      #c1, #c2{
-        box-shadow: 4px 8px 20px 0px rgb(159 159 159);
-      }
-      .img_container{
-          /* width: 100%; */
-          height: 100%;
-          position: absolute;
-          opacity: 0;
-          transition: opacity 1s ease-in-out;
-          border-bottom: 1px 1px red;
-      }
-       .active {
-          opacity: 1;
-      }
-      .cont1{
-        height: 70%;
-      }
-      img{
-        width: 100%;
-        height: 100%;
-      }
-      .cont2{
-        background-color: #e1d6d6;
-        height: 30%;
-      }
-      .carousel {
-          position: relative;
-          width: 40%;
-          height: 600px;
-          overflow: hidden;
-          margin: 50px;
-      }
-      #Author{
-        text-align: right;
-        padding: 2%;
+    .gallery-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #101b38;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
 
-      }
-      #c3
-      {
-        display: flex;
-      }
-      
-      #underline_div{
-          
-          background-color: #51536f; 
-          margin-left: 45%;
-        }
-        #comment{
-            font-weight: 600;
-            padding: 2px;
-        }
-      
-      #fam{
-        font-size: 15px;
-      }
+    .gallery-underline {
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #91abd9, #c2c1ff);
+      border-radius: 4px;
+      margin: 0 auto 30px;
+    }
 
-      @media (max-width: 992px) {
-        #c3 {
-              width: 110%;
-          }
+    /* ---- Horizontal scroll track wrapper ---- */
+    .h-scroll-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+      background: transparent;
+    }
+
+    /* The moving strip */
+    .h-scroll-track {
+      display: flex;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    /* Each slide cell */
+    .h-scroll-track .slide {
+      flex: 0 0 auto;
+      width: 100%;
+      height: 640px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(100deg, #c5d4ec 10%, #e8c8c0 90%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .h-scroll-track .slide img {
+      width: 100%;
+      height: 65%;
+      object-fit: contain;   /* show full photo — no cropping */
+      display: block;
+      background: rgba(0,0,0,0.05);
+    }
+
+    .h-scroll-track .slide .caption {
+      height: 35%;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .h-scroll-track .slide .caption p {
+      margin: 0 0 10px 0;
+      font-style: italic;
+      max-width: 90%;
+      line-height: 1.4;
+    }
+    
+    .h-scroll-track .slide .caption .author {
+      font-weight: bold;
+      font-style: normal;
+      color: #101b38;
+      font-size: 0.9rem;
+    }
+
+    /* Slide counter badge */
+    .gallery-counter {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: rgba(16, 27, 56, 0.7);
+      color: #c2c1ff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: 10;
+      letter-spacing: 0.5px;
+    }
+
+    /* Prev / Next arrow buttons */
+    .gallery-btn {
+      position: absolute;
+      top: 32.5%;
+      transform: translateY(-50%);
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.8);
+      border: 2px solid #101b38;
+      color: #101b38;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .gallery-btn:hover {
+      background: #101b38;
+      color: #fff;
+    }
+    .gallery-btn.prev { left: 10px; }
+    .gallery-btn.next { right: 10px; }
+
+    /* Dot indicators */
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .gallery-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(16, 27, 56, 0.25);
+      border: 2px solid #91abd9;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .gallery-dot.active {
+      background: #c2c1ff;
+      border-color: #101b38;
+      transform: scale(1.3);
+    }
+
+    @media (max-width: 600px) {
+      .gallery-title { font-size: 1.4rem; }
+      .h-scroll-wrapper {
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
       }
-      @media (max-width: 768px) {
-          #c3 {
-              display: grid;
-              grid-template-columns: 1fr;
-              gap: 20px;
-              width: 80%;
-              margin-left: 7%;
-          }
-          .carousel{
-            height: 500px;
-            width: 100%;
-          }
-          
-          
+      .h-scroll-track {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        transform: none !important; 
+        transition: none;
       }
-      @media (max-width: 568px) {
-        #c3 {
-              width: 80%;
-              margin-left: 2%;
-          }
-        #comment{
-            font-size: 13px;
-        }
-        #Author{
-            font-size: 11px;
-        }
-       
+      .h-scroll-track .slide {
+        height: auto; 
+        border-radius: 8px;
+        background: transparent;
+        justify-content: flex-start;
       }
-      @media (max-width: 368px){
-       
-        #underline_div{
-          margin-left: 20%;
-        }
-        #c3{
-          margin-left: 1%;
-          width: 98%;
-        }
-        #c2,#c1{
-          /* height: 100%; */
-          width: 100%;
-          margin-left: 0;
-        }
-        #fam #comment{
-            font-size: 10px;
-        }
-        
-        
+      .h-scroll-track .slide img {
+        height: 140px;
+        object-fit: cover; 
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       }
-       
-    </style>
+      .h-scroll-track .slide .caption { 
+        height: auto; 
+        padding: 5px 2px; 
+        font-size: 0.75rem; 
+        background: transparent; 
+      }
+      .gallery-counter, .gallery-btn, .gallery-dots {
+        display: none !important; 
+      }
+    }
+    @media (min-width: 601px) and (max-width: 992px) {
+      .h-scroll-track .slide { height: 500px; }
+      .h-scroll-track .slide img { height: 60%; }
+      .h-scroll-track .slide .caption { height: 40%; }
+      .gallery-btn { top: 30%; }
+    }
+  </style>
   <link href="style.css" rel="stylesheet">
 </head>
 <body id="gallery_body">
-    <div id="navbar"></div>
-    <h1 class="heading">My Creativity</h1>
+  <div id="navbar"></div>
 
-    <div id="underline_div"></div>
+  <section id="gallery-section">
+    <h1 class="gallery-title">My Creativity</h1>
+    <div class="gallery-underline"></div>
 
-    <div class="container" id="c3">
-
-        <div class="carousel" id="c2">
-            <div class="img_container" class="active">
-                <div class="cont1">
-                    <img src="image/rimage7.jpeg"  alt=" 1" >
-                </div>
-                <div class="cont2">
-                    <p id="comment">"आशा वेगवेगळ्या, व सुंदर डिझाईनच्या रांगोळ्या पाहून मन एकदम प्रसन्न होते.नाशाही, ना पेन, फक्त रांगोळीचा वापर करून काढलेल्या डिझाईन मधून अंतरात्म्यापर्यंत शुभेच्छा पोहोचतात. ही एक दैवी देणगी आहे. ही कला खूपच छान आहे. अशा सुंदर रांगोळ्या आम्हाला नेहमी बघायला मिळो पांडुरंगा चरणी प्रार्थना"</p>
-                    <p id="Author">Smita Deshmukh</p>
-                </div>
-            </div>
-            <div class="img_container">
-                <div class="cont1">
-                    <img src="image/rimage2.jpeg" alt=" 2" >
-                </div>
-                <div class="cont2">
-                    <p id="comment">"Your Rangoli designs are beautiful unique with Indian heritage and  cultural touch"</p>
-                    <p id="Author">-Anuradha Phadnis , Pune</p>
-                </div>
-            </div>
-            <div class="img_container">
-                <div class="cont1">
-                    <img src="image/rimage3.jpeg" alt=" 3" >
-                </div>
-                <div class="cont2">
-                    <p id="comment">"अंजना तुझ्या रांगोळ्या खरोखर अप्रतिम असतात . त्या पाहून आम्हाला रांगोळी काढता न येणाऱ्या पण प्रेरणा मिळते आणि मी आणि माझ्या दोन्ही मुली तुझ्या रांगोळ्या घरी काढायचा प्रयत्न करतो ..बऱ्याच वेळा तुझ्या रांगोळ्या मधून संदेश असतात , शुभेच्छा असतात खरोखर खूप च छान आणि प्रसन्न वाटते ते पाहून -"</p>
-                    <p id="Author">-नंदिनी कुलकर्णी ,अजमेरा मोरवाडी पिंपरी</p>
-                </div>
-            </div>
+    <div class="h-scroll-wrapper" id="galleryWrapper">
+      <!-- Moving strip -->
+      <div class="h-scroll-track" id="galleryTrack">
+        <div class="slide">
+          <img src="image/rimage7.jpeg" alt="Rangoli 1">
+          <div class="caption">
+            <p>"आशा वेगवेगळ्या, व सुंदर डिझाईनच्या रांगोळ्या पाहून मन एकदम प्रसन्न होते.नाशाही, ना पेन, फक्त रांगोळीचा वापर करून काढलेल्या डिझाईन मधून अंतरात्म्यापर्यंत शुभेच्छा पोहोचतात. ही एक दैवी देणगी आहे. ही कला खूपच छान आहे. अशा सुंदर रांगोळ्या आम्हाला नेहमी बघायला मिळो पांडुरंगा चरणी प्रार्थना"</p>
+            <span class="author">- Smita Deshmukh</span>
+          </div>
         </div>
-        
-        <div class="carousel" id="c1">
-            <div class="img_container" class="active">
-                <div class="cont1">
-                    <img src="image/rimage4.jpeg" alt=" 4" >
-                </div>
-                <div class="cont2">
-                    <p id="comment">"Anjana your rangoli's are very Creative and unique. Made using minimal colours but still very attractive.They remind me of the free hand designs that we used to make during school time which gives happiness."</p>
-                    <p id="Author">-Anita Badger</p>
-                </div>
-            </div>
-            <div class="img_container">
-                <div class="cont1">
-                    <img src="image/rimage5.jpeg" alt=" 5" >
-                </div>
-                <div class="cont2">
-                    <p id="comment">"वेगवेगळ्या डिझाईन बघून दिवसाची सर्वात खूप छान होते प्रत्येक प्रसंगणुसर रांगोळी काढून तुझ्या हातून अशीच दिवसाची सर्वात व्हावी"</p>
-                    <p id="Author">-ज्योती थोरात सोमवंशी छ.संभाजीनगर</p>
-                </div>
-            </div>
-            <div class="img_container">
-                <div class="cont1">
-                    <img src="image/rimage6.jpeg" alt=" 6" >
-                </div>
-                <div class="cont2" id="fam">
-                    <p id="comment">"Hii Anjana aunty.... It's Nidhi from ua family bunch... 
-                        Nd am here to share my words regards to ua astonishing rangoli designs... 
-                        They are too arabesque🥀adorable💫and artistic🪸 they evoke some emotions sometimes 
-                        lyk devotional refreshing🌤️ nd all....the combinations of light colours u took out there are pleasent😍 to eyes.... 
-                        Thank you for sharing ur work with busy schedule also"</p>
-                    <p id="Author">-Family Grp</p>
-                </div>
-            </div>
-            <div class="img_container">
-                <div class="cont1">
-                    <img src="image/rimage8.jpeg" alt=" 7" >
-                </div>
-                <div class="cont2">
-                    <p id="comment">"रोजच्या धावपळी मधून देखिल वेळ काढ़ून तुम्ही छान छान रांगोळया काढ़ता आणि आपली आवड़, कला जोपासता, 
-                        ते पाहून खरच खुप छान वाटते."</p>
-                    <p id="Author">-स्नेहा जोशी, किसनकृपा मोरवाड़ी पिंपरी</p>
-                </div>
-            </div>
+        <div class="slide">
+          <img src="image/rimage2.jpeg" alt="Rangoli 2">
+          <div class="caption">
+            <p>"Your Rangoli designs are beautiful unique with Indian heritage and cultural touch"</p>
+            <span class="author">- Anuradha Phadnis, Pune</span>
+          </div>
         </div>
-    </div>  <div id="footer"></div>
-    <script>
-      fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar').innerHTML = data;
-        });
+        <div class="slide">
+          <img src="image/rimage3.jpeg" alt="Rangoli 3">
+          <div class="caption">
+            <p>"अंजना तुझ्या रांगोळ्या खरोखर अप्रतिम असतात . त्या पाहून आम्हाला रांगोळी काढता न येणाऱ्या पण प्रेरणा मिळते आणि मी आणि माझ्या दोन्ही मुली तुझ्या रांगोळ्या घरी काढायचा प्रयत्न करतो ..बऱ्याच वेळा तुझ्या रांगोळ्या मधून संदेश असतात , शुभेच्छा असतात खरोखर खूप च छान आणि प्रसन्न वाटते ते पाहून -"</p>
+            <span class="author">- नंदिनी कुलकर्णी, अजमेरा मोरवाडी पिंपरी</span>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="image/rimage4.jpeg" alt="Rangoli 4">
+          <div class="caption">
+            <p>"Anjana your rangoli's are very Creative and unique. Made using minimal colours but still very attractive.They remind me of the free hand designs that we used to make during school time which gives happiness."</p>
+            <span class="author">- Anita Badger</span>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="image/rimage5.jpeg" alt="Rangoli 5">
+          <div class="caption">
+            <p>"वेगवेगळ्या डिझाईन बघून दिवसाची सर्वात खूप छान होते प्रत्येक प्रसंगणुसर रांगोळी काढून तुझ्या हातून अशीच दिवसाची सर्वात व्हावी"</p>
+            <span class="author">- ज्योती थोरात सोमवंशी छ.संभाजीनगर</span>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="image/rimage6.jpeg" alt="Rangoli 6">
+          <div class="caption">
+            <p>"Hii Anjana aunty.... It's Nidhi from ua family bunch... Nd am here to share my words regards to ua astonishing rangoli designs... They are too arabesque🥀adorable💫and artistic🪸 they evoke some emotions sometimes lyk devotional refreshing🌤️ nd all....the combinations of light colours u took out there are pleasent😍 to eyes.... Thank you for sharing ur work with busy schedule also"</p>
+            <span class="author">- Family Grp</span>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="image/rimage8.jpeg" alt="Rangoli 7">
+          <div class="caption">
+            <p>"रोजच्या धावपळी मधून देखिल वेळ काढ़ून तुम्ही छान छान रांगोळया काढ़ता आणि आपली आवड़, कला जोपासता, ते पाहून खरच खुप छान वाटते."</p>
+            <span class="author">- स्नेहा जोशी, किसनकृपा मोरवाड़ी पिंपरी</span>
+          </div>
+        </div>
+      </div>
 
+      <!-- Counter -->
+      <div class="gallery-counter" id="galleryCounter">1 / 7</div>
 
-        const images = document.querySelectorAll('#c2 .img_container');
-        let currentIndex = 0;
-        function changeImage() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
+      <!-- Nav arrows -->
+      <button class="gallery-btn prev" id="galleryPrev" aria-label="Previous">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="gallery-btn next" id="galleryNext" aria-label="Next">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
 
+    <!-- Dot indicators -->
+    <div class="gallery-dots" id="galleryDots"></div>
+  </section>
 
-        const images1 = document.querySelectorAll('#c1 .img_container');
-        let currentIndex1 = 0;
-        function changeImage1() {
-            images1[currentIndex1].classList.remove('active');
-            currentIndex1 = (currentIndex1 + 1) % images1.length;
-            images1[currentIndex1].classList.add('active');
-        }
+  <div id="footer"></div>
 
-        setInterval(changeImage, 3500);
-        setInterval(changeImage1, 3500);
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+      });
 
-    </script>
-    
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      // Global event delegation for navbar
+      document.addEventListener('click', function(e) {
+          const toggle = e.target.closest('#nav-toggle');
+          if (toggle) {
+              const nav = document.getElementById('nav-menu');
+              if (nav) {
+                  nav.classList.toggle('show-menu');
+                  toggle.classList.toggle('show-icon');
+              }
+          }
+          
+          const dropdownBtn = e.target.closest('.dropdown__button');
+          if (dropdownBtn) {
+              const item = dropdownBtn.closest('.dropdown__item');
+              if (item) {
+                  const showDropdown = document.querySelector('.show-dropdown');
+                  const dropdownContainer = item.querySelector('.dropdown__container');
+                  if(item.classList.contains('show-dropdown')){
+                      dropdownContainer.removeAttribute('style');
+                      item.classList.remove('show-dropdown');
+                  } else {
+                      dropdownContainer.style.height = dropdownContainer.scrollHeight + 'px';
+                      item.classList.add('show-dropdown');
+                  }
+                  
+                  if(showDropdown && showDropdown !== item){
+                      const oldContainer = showDropdown.querySelector('.dropdown__container');
+                      if(oldContainer) oldContainer.removeAttribute('style');
+                      showDropdown.classList.remove('show-dropdown');
+                  }
+              }
+          }
+      });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
   <script>
     fetch('footer.html')
-      .then(response => response.text())
-      .then(data => {
-          document.getElementById('footer').innerHTML = data;
+      .then(r => r.text())
+      .then(d => { document.getElementById('footer').innerHTML = d; });
+  </script>
+
+  <script>
+    const track    = document.getElementById('galleryTrack');
+    const slides   = track.querySelectorAll('.slide');
+    const counter  = document.getElementById('galleryCounter');
+    const dotsWrap = document.getElementById('galleryDots');
+    const total    = slides.length;
+    let current    = 0;
+    let autoTimer;
+
+    /* Build dots */
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    function updateDots() {
+      dotsWrap.querySelectorAll('.gallery-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
       });
+    }
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      counter.textContent = `${current + 1} / ${total}`;
+      updateDots();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    /* Auto-scroll every 4 s */
+    function startAuto() {
+      autoTimer = setInterval(next, 4000);
+    }
+    function stopAuto() {
+      clearInterval(autoTimer);
+    }
+
+    /* Pause on hover, resume on leave */
+    const wrapper = document.getElementById('galleryWrapper');
+    wrapper.addEventListener('mouseenter', stopAuto);
+    wrapper.addEventListener('mouseleave', startAuto);
+
+    /* Arrow buttons */
+    document.getElementById('galleryNext').addEventListener('click', () => { stopAuto(); next(); startAuto(); });
+    document.getElementById('galleryPrev').addEventListener('click', () => { stopAuto(); prev(); startAuto(); });
+
+    /* Touch swipe support */
+    let touchStartX = 0;
+    wrapper.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; stopAuto(); }, { passive: true });
+    wrapper.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+      startAuto();
+    }, { passive: true });
+
+    /* Kick off */
+    startAuto();
   </script>
 </body>
 </html>
